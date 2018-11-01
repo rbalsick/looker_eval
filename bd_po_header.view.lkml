@@ -154,8 +154,8 @@ view: bd_po_header {
     sql: ${TABLE}.nocontractvalidation ;;
   }
 
-  dimension: nocontractvalidationamount {
-    type: number
+  measure: nocontractvalidationamount {
+    type: sum
     sql: ${TABLE}.nocontractvalidationamount ;;
   }
 
@@ -164,8 +164,8 @@ view: bd_po_header {
     sql: ${TABLE}.oncontract ;;
   }
 
-  dimension: oncontractamount {
-    type: number
+  measure: oncontractamount {
+    type: sum
     sql: ${TABLE}.oncontractamount ;;
   }
 
@@ -292,23 +292,23 @@ view: bd_po_header {
     sql: ${TABLE}.stcount ;;
   }
 
-  dimension: totalamount {
-    type: number
+  measure: totalamount {
+    type: sum
     sql: ${TABLE}.totalamount ;;
   }
 
-  dimension: totallinescount {
-    type: number
+  measure: totallinescount {
+    type: sum
     sql: ${TABLE}.totallinescount ;;
   }
 
-  dimension: totalquantity {
-    type: number
+  measure: totalquantity {
+    type: sum
     sql: ${TABLE}.totalquantity ;;
   }
 
-  dimension: totaltaxes {
-    type: number
+  measure: totaltaxes {
+    type: sum
     sql: ${TABLE}.totaltaxes ;;
   }
 
