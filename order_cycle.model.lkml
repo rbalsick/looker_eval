@@ -106,3 +106,7 @@ explore: bd_asn_header {
     sql_on: ${bd_asn_header.senderrooteid} = ${d_vendor.eid} ;;
   }
 }
+
+explore: d_provider {
+  sql_always_where: ${pi_org_flg} = TRUE ;;
+}
