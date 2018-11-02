@@ -294,6 +294,7 @@ view: bd_po_header {
 
   measure: totalamount {
     type: sum
+    value_format_name: usd
     sql: ${TABLE}.totalamount ;;
   }
 
@@ -309,6 +310,7 @@ view: bd_po_header {
 
   measure: totaltaxes {
     type: sum
+    value_format_name: usd
     sql: ${TABLE}.totaltaxes ;;
   }
 
