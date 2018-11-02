@@ -181,7 +181,7 @@ view: bd_po_header {
 
   dimension: ponumber {
     type: string
-    drill_fields: [ponumber, bd_po_lines.linenumber, bd_po_lines.supplierpartnumber, bd_po_lines.buyerpartnumber, bd_po_lines.uom, bd_po_lines.quantity, bd_po_lines.unitprice, bd_po_lines.extendedprice, bd_po_lines.itemdescription]
+    drill_fields: [bd_po_lines.linenumber, bd_po_lines.supplierpartnumber, bd_po_lines.buyerpartnumber, bd_po_lines.uom, bd_po_lines.quantity, bd_po_lines.unitprice, bd_po_lines.extendedprice, bd_po_lines.itemdescription]
     sql: ${TABLE}.ponumber ;;
   }
 
