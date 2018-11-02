@@ -295,6 +295,7 @@ view: bd_po_header {
   measure: totalamount {
     type: sum
     value_format_name: usd
+    drill_fields: [receivedfrompartnerts_date, receiverrooteid, ponumber, totallinescount, totalamount, totalquantity, totaltaxes, oncontractamount, nocontractvalidationamount]
     sql: ${TABLE}.totalamount ;;
   }
 
