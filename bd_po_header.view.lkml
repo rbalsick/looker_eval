@@ -296,6 +296,7 @@ view: bd_po_header {
     type: sum
     value_format_name: usd
     drill_fields: [receivedfrompartnerts_date, receiverrooteid, ponumber, totallinescount, totalamount, totalquantity, totaltaxes, oncontractamount, nocontractvalidationamount]
+    link: {label: "Explore Top 100 PO's by Total Amount" url: "{{ link }}&sorts=bd_po_header.totalamount+desc&limit=100" }
     sql: ${TABLE}.totalamount ;;
   }
 
