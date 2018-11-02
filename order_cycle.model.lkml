@@ -39,6 +39,13 @@ explore: bd_po_header {
   }
 }
 
+explore: bd_po_lines {
+  join: bd_po_header {
+    relationship: many_to_one
+    sql_on: ${bd_po_lines.bt_id} = ${bd_po_header.bt_id} ;;
+  }
+}
+
 explore: bd_poa_header {
   join: bd_poa_lines {
     relationship: one_to_many
