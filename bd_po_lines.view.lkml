@@ -88,6 +88,6 @@ view: bd_po_lines {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [bd_po_header.receivedfrompartnerts_date, bd_po_header.ponumber, linenumber, buyerpartnumber]
   }
 }

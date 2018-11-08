@@ -536,6 +536,23 @@ view: d_provider {
     sql: ${TABLE}.provider_name ;;
   }
 
+  dimension: provider_name_styled {
+    hidden: no
+    type: string
+    html: <font size="3">{{value}}</font> ;;
+    sql: ${TABLE}.provider_name ;;
+    link: {
+      label: "Go to Contract"
+      url: "https://cgx.ghx.com?contractOrgId={{value}}"
+      icon_url: ""
+    }
+    link: {
+      label: "Go to SFDC"
+      url: "https://cgx.ghx.com?contractOrgId={{value}}"
+      icon_url: ""
+    }
+  }
+
   dimension: psuite_eboid {
     type: string
     sql: ${TABLE}.psuite_eboid ;;

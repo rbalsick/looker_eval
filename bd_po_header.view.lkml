@@ -156,6 +156,7 @@ view: bd_po_header {
 
   measure: nocontractvalidationamount {
     type: sum
+    value_format_name: usd
     sql: ${TABLE}.nocontractvalidationamount ;;
   }
 
@@ -166,6 +167,7 @@ view: bd_po_header {
 
   measure: oncontractamount {
     type: sum
+    value_format_name: usd
     sql: ${TABLE}.oncontractamount ;;
   }
 
@@ -225,6 +227,11 @@ view: bd_po_header {
   }
 
   dimension: releasenumber {
+    type: string
+    sql: ${TABLE}.releasenumber ;;
+  }
+
+  dimension: releasenumber2 {
     type: string
     sql: ${TABLE}.releasenumber ;;
   }
@@ -296,9 +303,25 @@ view: bd_po_header {
   measure: totalamount {
     type: sum
     value_format_name: usd
-    drill_fields: [receivedfrompartnerts_date, receiverrooteid, ponumber, totallinescount, totalamount, totalquantity, totaltaxes, oncontractamount, nocontractvalidationamount]
+    drill_fields: [d_provider.provider_name, ponumber, bd_po_lines.linenumber, bd_po_lines.quantity, bd_po_lines.unitprice]
     link: {label: "Explore Top 100 PO's by Total Amount" url: "{{ link }}&sorts=bd_po_header.totalamount+desc&limit=100" }
     sql: ${TABLE}.totalamount ;;
+  }
+
+  measure: avg_po_amount {
+    type: average
+    value_format_name: usd
+    sql: ${TABLE}.totalamount ;;
+  }
+
+  measure: first_po {
+    type: string
+    sql: to_char(MIN(${TABLE}.receivedfrompartnerts),'MM DD YYYY HH:mmAM') ;;
+  }
+
+  measure: last_po {
+    type: string
+    sql: to_char(MAX(${TABLE}.receivedfrompartnerts),'Mon DD YYYY HH:mmAM') ;;
   }
 
   measure: totallinescount {
