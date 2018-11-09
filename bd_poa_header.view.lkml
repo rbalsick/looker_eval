@@ -53,6 +53,7 @@ view: bd_poa_header {
 
   dimension: bt_id {
     type: string
+    primary_key: yes
     sql: ${TABLE}.bt_id ;;
   }
 

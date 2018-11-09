@@ -28,6 +28,7 @@ view: bd_poa_lines {
 
   dimension: lineid {
     type: string
+    primary_key: yes
     sql: ${TABLE}.lineid ;;
   }
 

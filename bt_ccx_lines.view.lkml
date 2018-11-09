@@ -8,6 +8,7 @@ view: bt_ccx_lines {
 
   dimension: btl_line_id {
     type: string
+    primary_key: yes
     sql: ${TABLE}.btl_line_id ;;
   }
 

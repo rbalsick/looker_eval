@@ -33,6 +33,7 @@ view: bd_inv_lines {
 
   dimension: lineid {
     type: string
+    primary_key: yes
     sql: ${TABLE}.lineid ;;
   }
 

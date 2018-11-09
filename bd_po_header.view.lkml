@@ -28,6 +28,7 @@ view: bd_po_header {
 
   dimension: bt_id {
     type: string
+    primary_key: yes
     sql: ${TABLE}.bt_id ;;
   }
 
@@ -231,11 +232,6 @@ view: bd_po_header {
     sql: ${TABLE}.releasenumber ;;
   }
 
-  dimension: releasenumber2 {
-    type: string
-    sql: ${TABLE}.releasenumber ;;
-  }
-
   dimension: sendereid {
     type: string
     sql: ${TABLE}.sendereid ;;
@@ -304,7 +300,7 @@ view: bd_po_header {
     type: sum
     value_format_name: usd
     drill_fields: [d_provider.provider_name, ponumber, bd_po_lines.linenumber, bd_po_lines.quantity, bd_po_lines.unitprice]
-    link: {label: "Explore Top 100 PO's by Total Amount" url: "{{ link }}&sorts=bd_po_header.totalamount+desc&limit=100" }
+    link: {label: "Explore Top 100 PO's by Total AmountALEX" url: "{{ link }}&sorts=bd_po_header.totalamount+desc&limit=100" }
     sql: ${TABLE}.totalamount ;;
   }
 
@@ -316,7 +312,7 @@ view: bd_po_header {
 
   measure: first_po {
     type: string
-    sql: to_char(MIN(${TABLE}.receivedfrompartnerts),'MM DD YYYY HH:mmAM') ;;
+    sql: to_char(MIN(${TABLE}.receivedfrompartnerts),'Mon DD YYYY HH:mmAM') ;;
   }
 
   measure: last_po {
@@ -366,6 +362,6 @@ view: bd_po_header {
 
   measure: count {
     type: count
-    drill_fields: [buyername]
+    drill_fields: [receivedfrompartnerts_date, ponumber, totallinescount, totalamount]
   }
 }
