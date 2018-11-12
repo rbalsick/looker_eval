@@ -61,6 +61,14 @@ explore: bd_poa_header {
     relationship: one_to_many
     sql_on: ${bd_poa_header.bt_id} = ${bd_poa_lines.bt_id} ;;
   }
+}
+
+explore: bd_poa_ack_lines {
+  join: bd_poa_lines {
+    relationship: one_to_many
+    sql_on: ${bd_poa_lines.bt_id} = ${bd_poa_ack_lines.bt_id} ;;
+  }
+}
 
 #   join: d_provider {
 #     relationship: one_to_one
@@ -71,7 +79,7 @@ explore: bd_poa_header {
 #     relationship: one_to_one
 #     sql_on: ${bd_poa_header.senderrooteid} = ${d_vendor.eid} ;;
 #   }
-}
+
 
 explore: bd_inv_header {
   join: bd_inv_lines {
