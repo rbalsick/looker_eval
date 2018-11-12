@@ -356,7 +356,7 @@ view: bd_asn_header {
     sql: ${TABLE}.stcount ;;
   }
 
-  dimension: totallinecount {
+ dimension: totallinecount {
     type: number
     sql: ${TABLE}.totallinecount ;;
   }
@@ -388,6 +388,11 @@ view: bd_asn_header {
       year
     ]
     sql: ${TABLE}.updatedts ;;
+  }
+
+  measure: total_lines{
+    type: sum
+    sql: ${TABLE}.totallinecount ;;
   }
 
   measure: count {
